@@ -1,0 +1,507 @@
+
+/*  GLOBAIS  */
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+}
+
+body{
+    background: linear-gradient(black, rgb(17, 2, 38));
+}
+
+
+h1{
+    transition: all 0.5s;    
+    border-bottom: 5px solid transparent;
+    color: white;
+
+}
+h1:hover{
+    user-select: none;
+    transform: scale(1.005);
+    border-bottom: 5px solid rgb(204, 20, 97);
+}
+
+::-webkit-scrollbar {
+    width: .75rem;
+    background-color: rgb(17, 2, 38);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(204, 20, 97);
+    border-radius: 25px;
+    box-shadow: 0 0 10vw 3vw rgb(204, 20, 97);
+}
+
+/*  HEADER  */
+
+header{
+        position: sticky;
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        top: 0;
+        animation: scrool;
+        animation-timeline: view();
+        animation-range: cover 15% cover 100%;
+}
+
+@keyframes scrool{
+
+        20%{
+            background: 0;
+            border-bottom-left-radius: 0vw;
+            border-bottom-right-radius: 0vw;
+        }
+        35%{
+            background: white;
+            z-index: 1;
+            border-bottom-left-radius: 2vw;
+            border-bottom-right-radius: 2vw;
+        }
+        100%{
+            background: white;
+            z-index: 1;
+            border-bottom-left-radius: 2vw;
+            border-bottom-right-radius: 2vw;
+        }
+}
+
+.header{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+}
+.links,.tim2{
+        color: white;
+        text-decoration: none;
+        font-size: 1.25vw;
+        border-bottom: 2px solid rgba(249, 55, 136, 0);
+        transition: all 0.5s;
+        background-color: rgb(17, 2, 38);
+        padding: 1vw;
+        border-radius: 2vw;
+        animation: scrool2;
+        animation-timeline: view();
+        animation-range: cover 15%;
+}
+.links:hover, .tim2:hover{
+        border-bottom: 2px solid rgb(249, 55, 136);
+}
+.tim,.links2{
+        font-family: "Passero One", sans-serif;
+        font-size: 2vw;
+        color: rgb(204, 20, 97);
+        transition: all 0.5s;
+        text-decoration: none;
+        background-color: rgb(17, 2, 38);
+        padding: 1vw;
+        border-radius: 3vw;
+}
+@keyframes scrool2{
+        20%{
+            background-color: rgb(17, 2, 38);
+            color: white;
+            border-radius: 2vw;
+        }
+        35%{
+            background: white;
+            color: rgb(17, 2, 38);
+            border-radius: 0;
+        }
+        60%{
+            background: white;
+            color: rgb(17, 2, 38);
+            font-weight: 900;
+            border-radius: 0;
+        }
+        100%{
+            background: white;
+            color: rgb(17, 2, 38);
+            font-weight: 900;
+            border-radius: 0;
+        }
+}
+
+/*  BANER  */
+.titulo{
+    position: fixed;
+    top: 50vh;
+    width: 50vw;
+    left: -10vw;
+    animation:  1s titulo .5s forwards;
+    opacity: 0;
+    z-index: -1;
+}
+.baner{
+    width: 100vw;
+    height: 110%;
+    position: fixed;
+    z-index: -10;
+    top: -4vw;
+    animation: baner 1s;
+}
+.baner2{
+    width: 65vw;
+    height: 110%;
+    left: 12vw;
+    position: fixed;
+    z-index: -9;
+    top: -4vw;
+    animation: cara 1s;
+}
+@keyframes titulo{
+    0%{
+        translate: -10vw 0vw;
+        scale: .9;
+        opacity: 0;
+    }
+    100%{
+        translate: 0vw 0vw;
+        scale: 1;
+        opacity: 1;
+    }
+}
+@keyframes baner{
+    0%{
+        scale: 1.3;
+    }
+    100%{
+        width: 1;
+    }
+}
+@keyframes cara{
+    0%{
+        translate: 0vw 10vw;
+        scale: .9;
+    }
+    100%{
+        translate: 0vw 0vw;
+        scale: 1;
+    }
+}
+
+/*  MÚSICAS  */  
+iframe{
+    width: 40vw;
+    text-align: justify;
+    margin-left: 6vw;
+    margin-top: 2vw;
+    animation: p forwards;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
+    transition: all 0.5S;
+    opacity: 0;
+    translate: -100vw 0;
+}
+.melhores{
+    font-size: 4vw;
+    width: 85vw;
+}
+
+.tocadas{
+    margin-top: 50vw;
+    border-top-left-radius: 3vw;
+    border-top-right-radius: 3vw;
+    background: linear-gradient(rgb(32, 4, 71),rgb(76, 49, 167));
+    width: 100%;
+    color: white;
+    padding: 5vw 0vw;
+    visibility: none;
+}
+@keyframes p{
+    0%{
+        translate: -100vw 0;
+        opacity: 0;
+    }
+    100%{
+        translate: 0vw 0;
+        opacity: 1;
+    }
+}
+iframe:hover{
+    scale: 1.05;
+    box-shadow: 0 0 1vw  rgb(204, 20, 97);
+    z-index: 0;
+}
+
+/*  FOOTER  */
+footer{
+    background-color: black;
+    color: white;
+    margin-top: -3vw;
+    border-top-left-radius: 4vw;
+    border-top-right-radius: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8vw;
+    font-size: 2vw;
+}
+.timaia{
+    margin-right: -5.5vw;
+    border-radius: 14vw;
+    width: 20vw;
+    animation: 15s disco infinite linear;
+    box-shadow: 0vw 0vw 3vw 1vw rgb(204, 20, 97);
+}
+.frase,.producao{
+    width: 40vw;
+    animation: 1s cara;
+    animation-timeline: view();
+    animation-range: cover 0% cover 40%;
+}
+
+@keyframes disco{
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+/*  BIOGRAFIA  */
+.corpo{
+    background: linear-gradient(rgb(32, 4, 71),rgb(76, 49, 167));
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 2vw;
+    padding: 5vw;
+    margin-top: 90vh;
+    text-align: justify;
+    border-top-left-radius: 4vw;
+    border-top-right-radius: 4vw;;
+}
+
+p, .corpo h1{
+    margin-top: 3vw;
+    animation: p;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
+}
+.back0, .titulo3 img{
+    margin-top: 7vw;
+    position: fixed;
+    animation:1s titulo 1s forwards;
+    z-index: -9;
+    width: 60vw;
+    opacity: 0;
+}
+
+.back{
+    width: 100vw;
+    height: 110%;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    inset: 0;
+    animation: baner 1s;
+    margin-top: -5vw;
+}
+
+.back2{
+    width: 100vw;
+    height: 110%;
+    position: fixed;
+    z-index: -10;
+    margin-top: -5vw;
+    inset: 0;
+    animation: back2 1.5s ease-in-out;
+}
+@keyframes back2{
+    100%{
+        scale: 1;
+    }
+    0%{
+        scale: 2;
+    }
+}
+
+/*  DISCOGRAFIA  */
+
+.titulo3{   
+    animation: 1s titu .5s forwards;
+    right: -1vw;
+    top: 40vh;
+    position: fixed;
+    z-index: -9;
+    opacity: 0;
+    width: 50vw;
+}
+@keyframes titu{
+    to{
+        translate:0vw 0;
+        opacity: 1;
+    }
+    from{
+        translate:20vw 0;
+        opacity: 0;
+    }
+}
+
+.albuns{
+    display:flexbox;
+    width: 90vw;
+    flex-direction: column;
+    column-width: 40vw;
+}
+.albuns iframe{
+    width: 30vw;
+}
+.corpo2{
+    background: linear-gradient(rgb(32, 4, 71),rgb(76, 49, 167));
+    color: white;
+    font-size: 2vw;
+    padding: 5vw;
+    margin-top: 90vh;
+    border-top-left-radius: 4vw;
+    border-top-right-radius: 4vw;
+    text-align: justify;
+}
+
+/*  FOTOS   */
+.images img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 5vw rgb(204, 20, 97);
+}
+.images img{
+    transition: all .5s;
+    width: 30vw;
+}
+.bg{
+    background: linear-gradient(rgb(32, 4, 71),rgb(76, 49, 167));
+}
+.images{
+    margin: 5vw 0;
+    display:flexbox;
+    width: 90vw;
+    flex-direction: column;
+    columns: 3;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5vw;
+}
+
+.img1{
+    animation: fotos forwards;
+    animation-timeline: view();
+    animation-range: cover 10% cover 70%;
+    opacity: 0;
+}
+.img2{
+    animation: fotos forwards;
+    animation-timeline: view();
+    animation-range: cover 30% cover 90%;
+    opacity: 0;
+}
+.img3{
+    animation: fotos forwards;
+    animation-timeline: view();
+    animation-range: cover 20% cover 80%;
+    opacity: 0;
+}
+
+@keyframes fotos{
+    0%{
+        translate: 0 100vw;
+        opacity: 0;
+    }
+    20%{
+        translate: 0vw 0;
+        opacity: 1;
+    }
+    80%{
+        translate: 0vw 0;
+        opacity: 1;
+    }
+    100%{
+        translate: 0 -100vw;
+        opacity: 0;
+    }
+}
+
+.fotos{
+    color: white;
+    margin-left: 10vw;
+    margin-top: 5vw;
+    font-size: 5vw;
+}
+
+@media only screen and (max-width: 1200px){
+    .baner,.baner2,.back,.back2{
+        height: 60vw;
+        top: 5vw;
+    }
+    .titulo,.titulo3{
+        top: 20vw;
+    }
+    .tocadas, .corpo, .corpo2{
+        margin-top: 50vw;
+    }
+    .links,.tim2, .tim,.links2{
+        background-color: transparent;
+    }
+    .links,.tim2, .tim,.links2,.header,header{
+        font-size: 3vw;
+        animation: none;
+        border-radius: 0;
+        color: black;
+    }
+    .img1{
+        animation-range: cover 30% cover 90%;
+    }
+    .img2{
+        animation-range: cover 30% cover 90%;
+    }
+    .img3{
+        animation-range: cover 20% cover 80%;
+    }
+    header{
+        background-color: white;
+        border-bottom-right-radius: 2.5vw;
+        border-bottom-left-radius: 2.5vw;
+        z-index: 4;
+    }
+    p{
+        font-size: 3.5vw;
+    }
+
+}
+@media only screen and (max-width: 550px){
+    .tocadas, .corpo, .corpo2{
+        margin-top:55vw;
+    }
+    .baner,.baner2{
+        height: 60vw;
+        top: 15vw;
+    }
+    .back,.back2{
+        top: 20vw;
+    }
+    .titulo,back0,.titulo3{
+        top: 40vw;
+    }
+    iframe{
+        width: 85vw;
+    }
+    .img1{
+        animation-range: cover 30% cover 90%;
+    }
+    .img2{
+        animation-range: cover 30% cover 90%;
+    }
+    .img3{
+        animation-range: cover 20% cover 80%;
+    }
+    .albuns{
+        width: 50vw;
+    }
+    .albuns iframe{
+        width: 75vw;
+    }
+}
