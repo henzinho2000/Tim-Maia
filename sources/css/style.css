@@ -94,13 +94,15 @@ header{
 }
 .tim,.links2{
         font-family: "Passero One", sans-serif;
-        font-size: 2vw;
-        color: rgb(204, 20, 97);
+        color: white;
+        font-size: 2vw; 
         transition: all 0.5s;
         text-decoration: none;
         background-color: rgb(17, 2, 38);
         padding: 1vw;
         border-radius: 3vw;
+        border: 3px solid rgb(249, 55, 136);
+        box-shadow: 0 0 1vw .5vw rgb(204, 20, 97);
 }
 @keyframes scrool2{
         20%{
@@ -189,8 +191,8 @@ header{
 iframe{
     width: 40vw;
     text-align: justify;
-    margin-left: 6vw;
     margin-top: 2vw;
+    margin-left: 5vw;
     animation: p forwards;
     animation-timeline: view();
     animation-range: cover 0% cover 30%;
@@ -276,6 +278,20 @@ footer{
     text-align: justify;
     border-top-left-radius: 4vw;
     border-top-right-radius: 4vw;;
+}
+.midia{
+    width: 80vw;
+    margin: 5vw 0;
+    border-radius: 4vw;
+    transition: all 0.5s;
+    animation: p;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
+}
+.midia:hover{
+    scale: 1.02;
+    border-radius: 0;
+    box-shadow: 0 0 5vw 1vw rgb(204, 20, 97);
 }
 
 p, .corpo h1{
@@ -384,7 +400,6 @@ p, .corpo h1{
     columns: 3;
     align-items: center;
     justify-content: center;
-    margin-left: 5vw;
 }
 
 .img1{
@@ -443,15 +458,6 @@ p, .corpo h1{
     .tocadas, .corpo, .corpo2{
         margin-top: 50vw;
     }
-    .links,.tim2, .tim,.links2{
-        background-color: transparent;
-    }
-    .links,.tim2, .tim,.links2,.header,header{
-        font-size: 3vw;
-        animation: none;
-        border-radius: 0;
-        color: black;
-    }
     .img1{
         animation-range: cover 30% cover 90%;
     }
@@ -459,20 +465,46 @@ p, .corpo h1{
         animation-range: cover 30% cover 90%;
     }
     .img3{
-        animation-range: cover 20% cover 80%;
+        animation-range: cover 30% cover 90%;
     }
+
+    iframe{
+        margin-top: 5vw;
+    }
+    header{
+        z-index: 4;
+    }
+    p{
+        font-size: 3.5vw;
+        margin-top: 5vw;
+    }
+
+}
+@media only screen and (max-width: 700px){
+    .links,.tim2,.links2{
+        background-color: transparent;
+    }
+    .links,.tim2,.header,header{
+        font-size: 3vw;
+        animation: none;
+        border-radius: 0;
+        color: black;
+    }
+    .tim,.links2{
+        font-size: 4vw;
+        background-color: rgb(17, 2, 38);
+        border-radius: 5vw;
+        color: white;
+        box-shadow: none;
+        border: none;
+    }
+
     header{
         background-color: white;
         border-bottom-right-radius: 2.5vw;
         border-bottom-left-radius: 2.5vw;
         z-index: 4;
     }
-    p{
-        font-size: 3.5vw;
-    }
-
-}
-@media only screen and (max-width: 550px){
     .tocadas, .corpo, .corpo2{
         margin-top:55vw;
     }
@@ -487,7 +519,29 @@ p, .corpo h1{
         top: 40vw;
     }
     iframe{
-        width: 85vw;
+        width: 75vw;
+        margin-top: 2vw;
+        margin-left: 10vw;
+        margin-bottom: 5vw;
+    }
+    h1, .melhores{
+        font-size: 7vw;
+        margin: 10vw 0;
+    }
+    
+    .frase{
+        font-size: 4vw;
+        margin: 0;;
+    }
+    .producao{
+        margin: 0;
+        font-size: 2vw;
+        padding-bottom: 1vw;
+    }
+
+    p{
+        font-size: 5vw;
+        margin: 8vw 0;
     }
     .img1{
         animation-range: cover 30% cover 90%;
@@ -503,5 +557,6 @@ p, .corpo h1{
     }
     .albuns iframe{
         width: 75vw;
+        margin-left: 5.5vw;
     }
 }
