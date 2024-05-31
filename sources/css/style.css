@@ -17,7 +17,9 @@ h1{
     transition: all 0.5s;    
     border-bottom: 5px solid transparent;
     color: white;
-
+    animation: p forwards;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
 }
 h1:hover{
     user-select: none;
@@ -38,36 +40,12 @@ h1:hover{
 /*  HEADER  */
 
 header{
-        position: sticky;
+        position: fixed;
         height: 12vh;
         display: flex;
-        align-items: center;
-        color: white;
+        width: 100%;
+        z-index: 1;
         top: 0;
-        animation: scrool;
-        animation-timeline: view();
-        animation-range: cover 15% cover 100%;
-}
-
-@keyframes scrool{
-
-        20%{
-            background: 0;
-            border-bottom-left-radius: 0vw;
-            border-bottom-right-radius: 0vw;
-        }
-        35%{
-            background: white;
-            z-index: 1;
-            border-bottom-left-radius: 2vw;
-            border-bottom-right-radius: 2vw;
-        }
-        100%{
-            background: white;
-            z-index: 1;
-            border-bottom-left-radius: 2vw;
-            border-bottom-right-radius: 2vw;
-        }
 }
 
 .header{
@@ -85,12 +63,9 @@ header{
         background-color: rgb(17, 2, 38);
         padding: 1vw;
         border-radius: 2vw;
-        animation: scrool2;
-        animation-timeline: view();
-        animation-range: cover 15%;
 }
 .links:hover, .tim2:hover{
-        border-bottom: 2px solid rgb(249, 55, 136);
+    box-shadow: 0 0 1vw .5vw rgb(249, 55, 136);
 }
 .tim,.links2{
         font-family: "Passero One", sans-serif;
@@ -104,30 +79,6 @@ header{
         border: 3px solid rgb(249, 55, 136);
         box-shadow: 0 0 1vw .5vw rgb(204, 20, 97);
 }
-@keyframes scrool2{
-        20%{
-            background-color: rgb(17, 2, 38);
-            color: white;
-            border-radius: 2vw;
-        }
-        35%{
-            background: white;
-            color: rgb(17, 2, 38);
-            border-radius: 0;
-        }
-        60%{
-            background: white;
-            color: rgb(17, 2, 38);
-            font-weight: 900;
-            border-radius: 0;
-        }
-        100%{
-            background: white;
-            color: rgb(17, 2, 38);
-            font-weight: 900;
-            border-radius: 0;
-        }
-}
 
 /*  BANER  */
 .titulo{
@@ -135,8 +86,7 @@ header{
     top: 50vh;
     width: 50vw;
     left: -10vw;
-    animation:  1s titulo .5s forwards;
-    opacity: 0;
+    animation:  2s titulo;
     z-index: -1;
 }
 .baner{
@@ -147,6 +97,7 @@ header{
     top: -4vw;
     animation: baner 1s;
 }
+
 .baner2{
     width: 65vw;
     height: 110%;
@@ -206,7 +157,7 @@ iframe{
 }
 
 .tocadas{
-    margin-top: 50vw;
+    margin-top: 60vw;
     border-top-left-radius: 3vw;
     border-top-right-radius: 3vw;
     background: linear-gradient(rgb(32, 4, 71),rgb(76, 49, 167));
@@ -274,7 +225,7 @@ footer{
     align-items: center;
     font-size: 2vw;
     padding: 5vw;
-    margin-top: 90vh;
+    margin-top: 100vh;
     text-align: justify;
     border-top-left-radius: 4vw;
     border-top-right-radius: 4vw;;
@@ -300,18 +251,18 @@ p, .corpo h1{
     animation-timeline: view();
     animation-range: cover 0% cover 30%;
 }
-.back0, .titulo3 img{
-    margin-top: 7vw;
+.back0{
+    top: 10vw;
     position: fixed;
-    animation:1s titulo 1s forwards;
+    animation:1s titulo;
     z-index: -9;
     width: 60vw;
-    opacity: 0;
+    opacity: 1;
 }
 
 .back{
     width: 100vw;
-    height: 110%;
+    height: 110vw;
     position: fixed;
     z-index: -10;
     top: 0;
@@ -328,7 +279,22 @@ p, .corpo h1{
     margin-top: -5vw;
     inset: 0;
     animation: back2 1.5s ease-in-out;
+    transition: all 0.5s;
 }
+.baner2,.baner,.back2,.back,.titulo,.back0,.fotografo{
+    transition: all 0.5s;
+}
+.back:hover,.back2:hover, .baner:hover,.titulo:hover,.titulo3:hover,.back0:hover,.fotografo:hover{
+    transform: scale(1.04);
+}
+ .baner2:hover{
+    scale: 1.08;
+    margin-top: -2vw;
+}
+#baner{
+    top: -5vw;
+}
+
 @keyframes back2{
     100%{
         scale: 1;
@@ -341,13 +307,13 @@ p, .corpo h1{
 /*  DISCOGRAFIA  */
 
 .titulo3{   
-    animation: 1s titu .5s forwards;
+    animation: 2s titu;
     right: -1vw;
     top: 40vh;
     position: fixed;
     z-index: -9;
-    opacity: 0;
     width: 50vw;
+    transition: all 0.5s;
 }
 @keyframes titu{
     to{
@@ -374,7 +340,7 @@ p, .corpo h1{
     color: white;
     font-size: 2vw;
     padding: 5vw;
-    margin-top: 90vh;
+    margin-top: 100vh;
     border-top-left-radius: 4vw;
     border-top-right-radius: 4vw;
     text-align: justify;
@@ -389,9 +355,6 @@ p, .corpo h1{
     transition: all .5s;
     width: 30vw;
 }
-.bg{
-    background: linear-gradient(rgb(32, 4, 71),rgb(76, 49, 167));
-}
 .images{
     margin: 5vw 0;
     display:flexbox;
@@ -405,19 +368,19 @@ p, .corpo h1{
 .img1{
     animation: fotos forwards;
     animation-timeline: view();
-    animation-range: cover 10% cover 70%;
+    animation-range: cover 5% cover 90%;
     opacity: 0;
 }
 .img2{
     animation: fotos forwards;
     animation-timeline: view();
-    animation-range: cover 30% cover 90%;
+    animation-range: cover 5% cover 90%;
     opacity: 0;
 }
 .img3{
     animation: fotos forwards;
     animation-timeline: view();
-    animation-range: cover 20% cover 80%;
+    animation-range: cover 5% cover 90%;
     opacity: 0;
 }
 
@@ -446,6 +409,18 @@ p, .corpo h1{
     margin-top: 5vw;
     font-size: 5vw;
 }
+
+/*  FOTOGRÁFO  */
+.fotografo{
+    width: 80vw;
+    height: 60vw;
+    right: 0vw;
+    position: fixed;
+    z-index: -9;
+    bottom: -5vw;
+    animation: cara 1s;
+}
+
 
 @media only screen and (max-width: 1200px){
     .baner,.baner2,.back,.back2{
@@ -478,7 +453,13 @@ p, .corpo h1{
         font-size: 3.5vw;
         margin-top: 5vw;
     }
-
+    .fotografo{
+        top: 1vw;
+        height: 55vw;
+    }
+    #baner{
+        top: 0vw;
+    }
 }
 @media only screen and (max-width: 700px){
     .links,.tim2,.links2{
@@ -498,6 +479,10 @@ p, .corpo h1{
         box-shadow: none;
         border: none;
     }
+    .fotografo{
+        top: 20vw;
+        height: 55vw;
+    }
 
     header{
         background-color: white;
@@ -506,7 +491,7 @@ p, .corpo h1{
         z-index: 4;
     }
     .tocadas, .corpo, .corpo2{
-        margin-top:55vw;
+        margin-top:75vw;
     }
     .baner,.baner2{
         height: 60vw;
@@ -558,5 +543,11 @@ p, .corpo h1{
     .albuns iframe{
         width: 75vw;
         margin-left: 5.5vw;
+    }
+    #baner{
+        top: 15vw;
+    }
+    .back0{
+        top: 30vw;
     }
 }
